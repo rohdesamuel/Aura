@@ -63,7 +63,7 @@ int main()
 		for (int i = 0; i < 1000; ++i)
 		{
 			Bitset noise;
-			int noise_count = cmwc::rand() % 128;
+			int noise_count = 0;//cmwc::rand() % 128;
 			while(noise.count() < noise_count)
 			{
 				noise(cmwc::rand()%dim, true);
@@ -75,12 +75,12 @@ int main()
 				layer_low.input.flip(*it);
 				++it;
 			}
-		
+			
 			QueryPerformanceCounter(&start);
 			layer_low.learn();
-			layer_low.inference();
-			layer_high.learn();
-			layer_high.inference();
+			//layer_low.inference();
+			//layer_high.learn();
+			//layer_high.inference();
 			QueryPerformanceCounter(&end);
 			avg += end.QuadPart - start.QuadPart;
 			++count;
@@ -96,7 +96,7 @@ int main()
 		for (int i = 0; i < 0; ++i)
 		{
 			Bitset noise;
-			int noise_count = cmwc::rand() % 128;
+			int noise_count = 0;//cmwc::rand() % 128;
 			while(noise.count() < noise_count)
 			{
 				noise(cmwc::rand()%dim, true);

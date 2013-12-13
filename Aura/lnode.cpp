@@ -14,7 +14,6 @@ void LNode::inference()
 	
 	//Set the probability distribution
 	getInput();
-
 	Point * pInput = filter->find(&point, NULL, &sOutput, &sOutputNormal, &(this->distr_func));
 
 	//Create temporal output

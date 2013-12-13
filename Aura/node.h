@@ -9,11 +9,11 @@
 #include "dsets.h"
 #include "priorityqueue.h"
 
-class SuperNode
+class Node
 {
 public:
-	SuperNode(void):prevInput(NULL), sOutputNormal(0), tOutputNormal(0){ };
-	SuperNode(filters::Filter * filter):filter(filter), prevInput(NULL), sOutputNormal(0), tOutputNormal(0){ };
+	Node(void):prevInput(NULL), sOutputNormal(0), tOutputNormal(0){ };
+	Node(filters::Filter * filter):filter(filter), prevInput(NULL), sOutputNormal(0), tOutputNormal(0){ };
 
 	virtual void learn() = 0;
 	virtual void inference() = 0;
@@ -50,11 +50,12 @@ public:
 	filters::Filter * filter; 
 };
 
+/*
 class Node : public SuperNode
 {
 public:
 	Node():SuperNode() { };
 	Node(filters::Filter * filter):SuperNode(filter) { };
-};
+};*/
 
 #endif /* NODE__H */

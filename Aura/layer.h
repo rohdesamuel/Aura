@@ -4,7 +4,7 @@
 #include "point.h"
 #include "node.h"
 
-class SuperLayer 
+class Layer 
 { 
 public:
 	virtual void learn() = 0;
@@ -12,6 +12,6 @@ public:
 	vector<Node*> nodes;
 };
 
-class Layer : public SuperLayer { };
+//class Layer : public SuperLayer { };
 
 #endif
